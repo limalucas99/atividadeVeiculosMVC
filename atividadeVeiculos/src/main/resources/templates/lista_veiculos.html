@@ -1,0 +1,37 @@
+<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"> 
+<head> 
+<meta charset="UTF-8"/> 
+<meta name="viewport" content="width=device-width" /> 
+<title>Hello Spring Boot</title> 
+<link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet"/> 
+<link th:href="@{/webjars/bootstrap/css/bootstrap-theme.min.css}" rel="stylesheet"/> 
+</head> 
+<body> 
+<div class="panel panel-default" style="margin: 10px"> 
+<div class="panel-heading"> 
+<h1 class="panel-title text-center">Veiculos</h1> 
+</div> 
+<div class="panel-body"> 
+<table class="table"> 
+<thead>
+<tr> 
+<th>Modelo</th> 
+<th>Marca</th>
+<th>Cor</th>
+<th>Fabricação</th>
+</tr>
+</thead> 
+<tbody>
+<tr th:each="veiculo : ${veiculos}">
+<td th:text="${veiculo.modelo}"></td> 
+<td th:text="${veiculo.marca}"></td>
+<td th:text="${veiculo.cor}"></td>
+<td th:text="${veiculo.anoFab}"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</body>
+</html>
